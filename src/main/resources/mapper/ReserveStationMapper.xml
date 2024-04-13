@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="entity.mapper.ReserveStationMapper">
+
+    <resultMap id="BaseResultMap" type="com.xdap.selfdevelopeddemo.entity.ReserveStation">
+            <id property="id" column="id" jdbcType="VARCHAR"/>
+            <result property="widget567024285491658752" column="widget_567024285491658752" jdbcType="VARCHAR"/>
+            <result property="widget567018596887166976" column="widget_567018596887166976" jdbcType="VARCHAR"/>
+            <result property="widget567017487040774146" column="widget_567017487040774146" jdbcType="TIMESTAMP"/>
+            <result property="widget567017487040774145" column="widget_567017487040774145" jdbcType="TIMESTAMP"/>
+            <result property="widget567017487040774144" column="widget_567017487040774144" jdbcType="VARCHAR"/>
+            <result property="widget567015783129939970" column="widget_567015783129939970" jdbcType="VARCHAR"/>
+            <result property="widget567015783129939969" column="widget_567015783129939969" jdbcType="VARCHAR"/>
+            <result property="widget567015783129939968" column="widget_567015783129939968" jdbcType="VARCHAR"/>
+            <result property="documentId" column="document_id" jdbcType="VARCHAR"/>
+            <result property="tabDocId" column="tab_doc_id" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="VARCHAR"/>
+            <result property="approverId" column="approver_id" jdbcType="VARCHAR"/>
+            <result property="tenantId" column="tenant_id" jdbcType="VARCHAR"/>
+            <result property="formId" column="form_id" jdbcType="VARCHAR"/>
+            <result property="processId" column="process_id" jdbcType="VARCHAR"/>
+            <result property="owner" column="owner" jdbcType="VARCHAR"/>
+            <result property="createdBy" column="created_by" jdbcType="VARCHAR"/>
+            <result property="creationDate" column="creation_date" jdbcType="TIMESTAMP"/>
+            <result property="lastUpdatedBy" column="last_updated_by" jdbcType="VARCHAR"/>
+            <result property="lastUpdateDate" column="last_update_date" jdbcType="TIMESTAMP"/>
+            <result property="objectVersionNumber" column="object_version_number" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,widget_567024285491658752,widget_567018596887166976,
+        widget_567017487040774146,widget_567017487040774145,widget_567017487040774144,
+        widget_567015783129939970,widget_567015783129939969,widget_567015783129939968,
+        document_id,tab_doc_id,status,
+        approver_id,tenant_id,form_id,
+        process_id,owner,created_by,
+        creation_date,last_updated_by,last_update_date,
+        object_version_number
+    </sql>
+</mapper>

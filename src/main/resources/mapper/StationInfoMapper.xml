@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xdap.selfdevelopeddemo.mapper.StationInfoMapper">
+
+    <resultMap id="BaseResultMap" type="com.xdap.selfdevelopeddemo.entity.StationInfo">
+        <id property="id" column="id" jdbcType="VARCHAR"/>
+        <!--备注-->
+        <result property="widget567013450279026690" column="widget_567013450279026690" jdbcType="VARCHAR"/>
+        <!--工位名称-->
+        <result property="widget567013450279026689" column="widget_567013450279026689" jdbcType="VARCHAR"/>
+        <!--工位编号-->
+        <result property="widget567013450279026688" column="widget_567013450279026688" jdbcType="VARCHAR"/>
+        <result property="documentId" column="document_id" jdbcType="VARCHAR"/>
+        <result property="tabDocId" column="tab_doc_id" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="VARCHAR"/>
+        <result property="approverId" column="approver_id" jdbcType="VARCHAR"/>
+        <result property="tenantId" column="tenant_id" jdbcType="VARCHAR"/>
+        <result property="formId" column="form_id" jdbcType="VARCHAR"/>
+        <result property="processId" column="process_id" jdbcType="VARCHAR"/>
+        <result property="owner" column="owner" jdbcType="VARCHAR"/>
+        <result property="createdBy" column="created_by" jdbcType="VARCHAR"/>
+        <result property="creationDate" column="creation_date" jdbcType="TIMESTAMP"/>
+        <result property="lastUpdatedBy" column="last_updated_by" jdbcType="VARCHAR"/>
+        <result property="lastUpdateDate" column="last_update_date" jdbcType="TIMESTAMP"/>
+        <result property="objectVersionNumber" column="object_version_number" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id
+        ,widget_567013450279026690,widget_567013450279026689,
+        widget_567013450279026688,document_id,tab_doc_id,
+        status,approver_id,tenant_id,
+        form_id,process_id,owner,
+        created_by,creation_date,last_updated_by,
+        last_update_date,object_version_number
+    </sql>
+
+
+    <select id="selectFreeStation" resultType="com.xdap.selfdevelopeddemo.entity.StationInfo">
+        <!-- 使用MyBatis动态SQL接收传入的开始时间和结束时间 -->
+        SELECT widget567013450279026690, widget_567013450279026689, widget_567013450279026688
+        FROM `view_567013448379006976` as station
+        WHERE id NOT IN (
+        SELECT widget_567019225999212545 as stationId
+        FROM view_567019224120164352 as reserveRecod
+        WHERE (widget_567019225999212546 BETWEEN #{startTime} AND #{endTime}) OR
+        (widget_567019225999212547 BETWEEN #{startTime} AND #{endTime})
+        )
+        AND startTime > NOW()
+    </select>
+
+
+</mapper>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.WorkerInfoMapper">
+
+    <resultMap id="BaseResultMap" type="entity.WorkerInfo">
+            <id property="id" column="id" jdbcType="VARCHAR"/>
+            <result property="widget567016329316401154" column="widget_567016329316401154" jdbcType="VARCHAR"/>
+            <result property="widget567016329316401153" column="widget_567016329316401153" jdbcType="VARCHAR"/>
+            <result property="widget567016329316401152" column="widget_567016329316401152" jdbcType="VARCHAR"/>
+            <result property="documentId" column="document_id" jdbcType="VARCHAR"/>
+            <result property="tabDocId" column="tab_doc_id" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="VARCHAR"/>
+            <result property="approverId" column="approver_id" jdbcType="VARCHAR"/>
+            <result property="tenantId" column="tenant_id" jdbcType="VARCHAR"/>
+            <result property="formId" column="form_id" jdbcType="VARCHAR"/>
+            <result property="processId" column="process_id" jdbcType="VARCHAR"/>
+            <result property="owner" column="owner" jdbcType="VARCHAR"/>
+            <result property="createdBy" column="created_by" jdbcType="VARCHAR"/>
+            <result property="creationDate" column="creation_date" jdbcType="TIMESTAMP"/>
+            <result property="lastUpdatedBy" column="last_updated_by" jdbcType="VARCHAR"/>
+            <result property="lastUpdateDate" column="last_update_date" jdbcType="TIMESTAMP"/>
+            <result property="objectVersionNumber" column="object_version_number" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,widget_567016329316401154,widget_567016329316401153,
+        widget_567016329316401152,document_id,tab_doc_id,
+        status,approver_id,tenant_id,
+        form_id,process_id,owner,
+        created_by,creation_date,last_updated_by,
+        last_update_date,object_version_number
+    </sql>
+</mapper>
